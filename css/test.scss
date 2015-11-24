@@ -1,0 +1,60 @@
+@import 'navigation';
+@import 'front-page-content';
+
+/*! Declaration that can be reused. Sets the font color and size */
+@mixin font-color($size, $color) {
+  color: $color;
+  font-size: $size;
+}
+
+/*! Declaration that can be reused. Sets the top and bottom margins */
+@mixin margins($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+body {
+	background-color: $gray_color;
+	font-family: 'Raleway', sans-serif;
+}
+
+#mainBody {
+	background-color: #FFF;
+	width: 100%-20%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+/*! Sets the top and bottom margin using the declaration made at the top */
+body,
+#mainBody,
+h1 {
+	@include margins(0, 0);
+}
+
+h1 {
+	@include font-color(7.5em, $pink_color);
+}
+
+h2 {
+	@include font-color(2.25em, $pink_color);
+	@include margins(-1em, 1em);
+}
+
+header {
+	img {
+		width: 90px;
+	}
+}
+
+hr {
+	clear:both;
+	border-top: 1px solid $gray_color;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+p {
+	padding: 2%;
+}
